@@ -1,10 +1,10 @@
 package ru.vsu.cs.oop.generator.logic;
 
-public class Road {
+public final class Road {
     
     private Location start, end;
 
-    
+
     public Road(final Location start, final Location end) {
         this.start = start;
         this.end = end;
