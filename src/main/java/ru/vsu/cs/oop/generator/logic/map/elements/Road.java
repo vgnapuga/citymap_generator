@@ -1,6 +1,7 @@
-package ru.vsu.cs.oop.generator.logic;
+package ru.vsu.cs.oop.generator.logic.map.elements;
 
-public final class Road {
+
+public class Road {
     
     private Location start, end;
 
@@ -12,11 +13,11 @@ public final class Road {
 
 
     public final Location getStart() {
-        return this.start;
+        return new Location(start.getId(), start.getName());
     }
 
     public final Location getEnd() {
-        return this.end;
+        return new Location(end.getId(), end.getName());
     }
 
 }

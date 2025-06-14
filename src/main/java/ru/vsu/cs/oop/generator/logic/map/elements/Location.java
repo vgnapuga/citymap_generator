@@ -1,6 +1,7 @@
-package ru.vsu.cs.oop.generator.logic;
+package ru.vsu.cs.oop.generator.logic.map.elements;
 
-public final class Location {
+
+public class Location {
     
     private int id;
     private String name;
@@ -12,10 +13,16 @@ public final class Location {
     }
 
 
-    //TODO: equals realization
     @Override
     public final boolean equals(Object obj) {
-        return true;
+        if (this == obj)
+            return true;
+
+        if (obj == null || this.getClass() != obj.getClass())
+            return false;
+
+        Location location = (Location) obj;
+        return this.id == location.getId() && this.name.equals(location.getName());
     }
 
 
