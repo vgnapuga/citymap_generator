@@ -122,6 +122,19 @@ public class CityMap {
     }
 
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+
+        CityMap map = (CityMap) obj;
+        return this.getLocations().equals(map.getLocations()) && this.getRoads().equals(map.getRoads());
+    }
+
+
     public final List<Location> getLocations() {
         return new ArrayList<>(this.locations);
     }

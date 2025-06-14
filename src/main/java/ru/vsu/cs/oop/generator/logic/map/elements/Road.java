@@ -12,6 +12,19 @@ public class Road {
     }
 
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+            
+        Road road = (Road) obj;
+        return start.equals(road.start) && end.equals(road.end);
+    }
+
+
     public final Location getStart() {
         return new Location(start.getId(), start.getName());
     }

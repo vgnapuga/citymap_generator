@@ -18,4 +18,13 @@ class RoadTest {
         assertEquals(b, road.getEnd());
     }
 
+    @Test
+    void testEquals() {
+        Road road_0 = new Road(a, b);
+        Road road_1 = new Road(a, new Location(2, "Два"));
+
+        assertTrue(road_0.equals(road_0));
+        assertFalse(road_0.equals(road_1));
+    }
+
 }
