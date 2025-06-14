@@ -30,7 +30,8 @@ public class CityMap {
     public final void saveToDotFile(String filePath) throws IOException {
         String DOT = this.toDOT();
 
-        filePath += ".dot";
+        if (!filePath.endsWith(".dot"))
+            filePath += ".dot";
 
         Files.writeString(
             Path.of(filePath),
