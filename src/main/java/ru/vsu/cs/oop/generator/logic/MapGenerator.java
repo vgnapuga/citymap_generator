@@ -21,8 +21,8 @@ public class MapGenerator {
             throw new IllegalArgumentException("Число локаций должно быть положительным");
         else if (maxRoadsPerLocation <= 0)
             throw new IllegalArgumentException("Максимальное число дорог для каждой локации должно быть положительным");
-        // else if (locationsCount < maxRoadsPerLocation)
-        //     throw new IllegalArgumentException("Максимальное кол-во дорог не может превышать кол-во локаций");
+        else if (locationsCount < maxRoadsPerLocation)
+            throw new IllegalArgumentException("Максимальное кол-во дорог не может превышать кол-во локаций");
 
         List<Location> locations = generateLocations(locationsCount);
         List<Road> roads = generateRoads(locations, maxRoadsPerLocation);

@@ -15,12 +15,12 @@ public class Main {
         CityMap map = MapGenerator.generate(locationsCount, maxRoads);
         map.saveToDotFile(filePath + ".dot");
 
-        Runtime.getRuntime().exec("dot -Tpng " + filePath + ".dot " + "-o " + filePath + ".png");
+        String command = "dot -Tpng " + filePath + ".dot " + "-o " + filePath + ".png";
+        Runtime.getRuntime().exec(command);
 
         CityMap loadedMap = CityMap.fromDotFileToCityMap(filePath + ".dot");
 
-        System.out.println(map.getLocations().equals(loadedMap.getLocations()));
-        System.out.println(map.getRoads().equals(loadedMap.getRoads()));
+        System.out.println(map.equals(loadedMap));
     }
     
 }

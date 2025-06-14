@@ -22,6 +22,9 @@ class MapGeneratorTest {
         
         assertThrows(IllegalArgumentException.class,
             () -> MapGenerator.generate(5, 0));
+
+        assertThrows(IllegalArgumentException.class,
+            () -> MapGenerator.generate(3, 4));
     }
 
 }

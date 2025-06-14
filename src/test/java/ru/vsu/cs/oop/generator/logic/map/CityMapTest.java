@@ -46,6 +46,19 @@ class CityMapTest {
     }
 
     @Test
+    void testEquals() {
+        Location l0 = new Location(0, "sfg");
+        Location l1 = new Location(1, "adar");
+
+        Road r = new Road(l0, l1);
+        
+        CityMap map1 = new CityMap(List.of(l0, l1), List.of(r));
+
+        assertTrue(map.equals(map));
+        assertFalse(map.equals(map1));
+    }
+
+    @Test
     void testInvalidFile() {
         assertThrows(IllegalArgumentException.class,
             () -> CityMap.fromDotFileToCityMap("invalid.txt"));
